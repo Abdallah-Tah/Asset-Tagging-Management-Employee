@@ -5,23 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AmazonSite extends Model
+class Paycheck extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'region',
-        'location',
-        'address',
-        'city',
-        'state',
-        'zip',
-        'square_feet',
-        'labor_budget',
-        'labor_hours',
         'user_id',
-        'created_at',
-        'updated_at',
+        'amazon_site_id',
+        'from',
+        'to',
+        'pay_stub_number',
     ];
 
     public function user()
@@ -29,13 +22,18 @@ class AmazonSite extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    public function employee()
+    public function amazonSite()
     {
-        return $this->belongsToMany('App\Models\Employee');
+        return $this->belongsToMany('App\Models\AmazonSite');
     }
 
     public function settingSite()
     {
         return $this->hasMany('App\Models\SettingSite');
+    }
+
+    public function employee()
+    {
+        return $this->belongsToMany('App\Models\Employee');
     }
 }

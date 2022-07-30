@@ -11,10 +11,10 @@
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
 
-        <x-sidebar.sublink title="Sites" href="{{ route('amazon-sites.index') }}"
-            :active="request()->routeIs('amazon-sites.index')" />
-        <x-sidebar.sublink title="Icon button" href="{{ route('buttons.icon') }}"
-            :active="request()->routeIs('buttons.icon')" />
+        <x-sidebar.sublink title="Site" href="{{ route('amazon-sites.index') }}"
+            :isActive="request()->routeIs('dashboard')" />
+        <x-sidebar.sublink title="Setting Sites" href="{{ route('setting-sites.index') }}"
+            :active="request()->routeIs('setting-sites.index')" />
         <x-sidebar.sublink title="Text with icon" href="{{ route('buttons.text-icon') }}"
             :active="request()->routeIs('buttons.text-icon')" />
     </x-sidebar.dropdown>

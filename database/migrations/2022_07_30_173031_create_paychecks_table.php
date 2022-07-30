@@ -13,10 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('amazon_site_employee', function (Blueprint $table) {
+        Schema::create('paychecks', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('amazon_site_id');
             $table->unsignedBigInteger('employee_id');
+            $table->string('from');
+            $table->string('to');
+            $table->string('pay_stub_number');
             $table->timestamps();
         });
     }
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_amazon_site_employee');
+        Schema::dropIfExists('paychecks');
     }
 };

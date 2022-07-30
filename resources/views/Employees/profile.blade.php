@@ -145,7 +145,7 @@
                                     class="material-icons text-success mr-2">Assigned Sites</i>Sites Completed</h6>
                             <small>Sites</small>
                             <div class="progress mb-3" style="height: 20px">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: {{ ($employee->amazonSite->count() * 1 /100) * 100 }}%"
+                                <div class="progress-bar bg-purple bg-purple-500 text-white hover:bg-purple-600 focus:ring-purple-500" role="progressbar" style="width: {{ ($employee->amazonSite->count() * 1 /100) * 100 }}%"
                                     aria-valuenow="{{ ($employee->amazonSite->count() * 1 /100) * 100 }}" aria-valuemin="0" aria-valuemax="100">{{ ($employee->amazonSite->count() * 1 /100) * 100 }}%</div>
                             </div>
                             <small>Website Markup</small>

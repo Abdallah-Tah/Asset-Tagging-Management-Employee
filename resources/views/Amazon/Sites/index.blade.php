@@ -77,16 +77,16 @@
                                 <tbody>
                                     @foreach ($sites as $site)
                                         <tr>
-                                            <td>{{ $site->region }}</td>
-                                            <td>{{ $site->location }}</td>
-                                            <td style="width:20%">{{ $site->address }}</td>
-                                            <td>{{ $site->city }}</td>
-                                            <td>{{ $site->state }}</td>
-                                            <td>{{ $site->zip }}</td>
-                                            <td>{{ $site->square_feet }}</td>
-                                            <td>{{ $site->labor_budget }}</td>
-                                            <td>{{ $site->labor_hours }}</td>
-                                            <td>
+                                            <td style="text-align:center">{{ $site->region }}</td>
+                                            <td style="text-align:center">{{ $site->location }}</td>
+                                            <td style="text-align:center; width:20%">{{ $site->address }}</td>
+                                            <td style="text-align:center">{{ $site->city }}</td>
+                                            <td style="text-align:center">{{ $site->state }}</td>
+                                            <td style="text-align:center">{{ $site->zip }}</td>
+                                            <td style="text-align:center">{{ $site->square_feet }}</td>
+                                            <td style="text-align:center">${{ number_format($site->labor_budget, 2) }}</td>
+                                            <td style="text-align:center">{{ $site->labor_hours }}</td>
+                                            <td style="text-align:center">
                                                 <a href="{{ route('amazon-sites.edit', $site->id) }}"
                                                     class="btn btn-sm btn-purple bg-purple-500 text-white hover:bg-purple-600 focus:ring-purple-500">{{ __('Edit') }}</a>
                                                 <a href="{{ route('amazon-sites.destroy', $site->id) }}"

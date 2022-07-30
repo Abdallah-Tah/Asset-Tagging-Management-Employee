@@ -18,9 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 // useless routes
 // Just to demo sidebar dropdown links active states.
@@ -41,6 +39,7 @@ Route::group(['auth', 'verified'], function () {
     Route::resource('/amazon-sites', App\Http\Controllers\AmazonSiteController::class);
     Route::post('/amazon-sites/import', [\App\Http\Controllers\AmazonSiteController::class, 'import'])->name('amazon-sites.import');
     Route::resource('/employees', App\Http\Controllers\EmployeeController::class);
+    Route::resource('/setting-sites', App\Http\Controllers\SettingSiteController::class);
     
 
 });
